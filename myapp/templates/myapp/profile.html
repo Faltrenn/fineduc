@@ -1,0 +1,60 @@
+{% extends 'myapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'profile.css' %}">    
+    <div class="profile-header">
+        <h1 class="profile-header-title">Meus dados</h1>
+    </div>
+
+    <div class="profile-body">
+        <form class="profile-form" action="{% url 'profile' %}" method="POST">
+            {% csrf_token %}
+            <div class="my-profile">
+                <div class="profile-image"></div>
+                <div class="name-and-bio">
+                    <label for="">Nome</label>
+                    <input type="text" name="name">
+                    <label for="">Bio</label>
+                    <textarea type="text" name="name"></textarea>
+                </div>
+            </div>
+            <div class="social-medias">
+                <label for="">Redes Sociais</label>
+                <div class="social-medias-content">
+                    <input type="text" name="instagram" placeholder="Link do Instagram">
+                    <input type="text" name="facebook" placeholder="Link do Facebook">
+                    <input type="text" name="youtube" placeholder="Link do Youtube">
+                    <input type="text" name="linkedin" placeholder="Link do Linkedin">
+                </div>
+            </div>
+            <div class="cellphone">
+                <label for="">Telefone</label>
+                <input type="text" name="cellphone" placeholder="Número de Telefone">
+            </div>
+            <div class="place">
+                <label>Localização</label>
+                <div class="place-row">
+                    <label>Estado:</label>
+                    <select name="state" id="">
+                        {% for state in states %}
+                            <option value="state">{{state}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="place-row">
+                    <label>Cidade:</label>
+                    <select name="state" id="">
+                        {% for state in states %}
+                            <option value="state">{{state}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Atualizar dados</button>
+        </form>
+    </div>
+
+{% endblock %}

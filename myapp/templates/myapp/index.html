@@ -1,0 +1,46 @@
+{% extends 'myapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'index.css' %}">
+    
+<div class="index-header">
+    <h1 class="index-header-title">Conheça alguns pedidos</h1>
+    <form class="filter">
+        <label for=""><h2 class="filter-title">Filtrar por: </h2></label>
+        <select name="filter" id="">
+            <option value="">Última hora</option>
+            <option value="">Último dia</option>
+            <option value="">Últimos 3 dias</option>
+            <option value="" selected>Útimos 7 dias</option>
+        </select>
+    </form>
+</div>
+
+<div class="cards">
+
+    {% for c in data %}
+
+        <div class="card">
+            <div class="card-header">
+                <div style="width: 45px;height: 45px;border-radius: 22.5px;background-color: black;"></div>
+                <h4 class="card-title">Nome completo da pessoa do card atual</h4>
+            </div>
+            <div class="card-content">
+                <p class="card-desc">Descrição do usuário do card que pode ser muito grande que mostrará apenas uma parte linkado ao perfil com um <a href="">ver mais</a>, se for muito grande</p>
+            </div>
+            <div class="card-goal">
+                Meta de 400 reais
+                <form action="" method="get">
+                    <button>Doar</button>
+                </form>
+            </div>
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

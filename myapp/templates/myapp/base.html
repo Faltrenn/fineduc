@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <title>Fineduc</title>
+</head>
+<body>
+    <header>
+        <div class="left-header-half">
+            <nav class="image-content">
+                <a href="{% url 'index' %}">
+                    <div class="image"></div>
+                </a>
+            </nav>
+        </div>
+        <div class="middle-header-half">
+            <nav>
+                <input type="text" name="search" id="search" placeholder="Digite o ID ou título">
+            </nav>
+        </div>
+        <div class="right-header-half">
+            <div class="login-area">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}" class="profile">
+                        <div style="width: 55px;height: 55px;border-radius: 27.5px;background-color: black;"></div>
+                    </a>
+                {% else %}
+                    <nav>
+                        <a class="login-buttom" href="{% url 'register' %}">Cadastre-se</a>
+                    </nav>
+                    <nav>
+                        <a class="login-buttom" href="{% url 'login' %}">Login</a>
+                    </nav>
+                {% endif %}
+                <nav>
+                    <a class="login-buttom-filled" href="{% url 'request' %}">Faça um pedido</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="main">
+        {% block content %} {% endblock %}
+    </div>
+
+    <footer></footer>
+</body>
+</html>

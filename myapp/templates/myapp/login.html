@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'account.css' %}">
+
+    <div class="account-header">
+        <h1 class="account-header-title">Login</h1>
+        <p>Não possui uma conta? <a href="{% url 'register' %}">Cadastre-se</a></p>
+    </div>
+
+    <div class="account-body">
+        <form class="account-form" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <label for="">Email</label>
+            <input type="text" name="email" id="">
+            <label for="">Senha</label>
+            <input type="password" name="pass" id="">
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+{% endblock %}

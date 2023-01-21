@@ -1,0 +1,116 @@
+.profile-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0px;
+}
+
+.profile-header-title {
+    font-size: 30pt;
+    margin: 0px;
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: black;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-form button {
+    font-size: 13pt;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.profile-form label {
+    font-size: 17pt;
+    font-weight: bold;
+}
+
+.profile-form input, .profile-form textarea {
+    font-size: 12pt;
+    border-radius: 5px;
+    font-weight: bold;
+    border: #4c5057 1px solid;
+    background-color: #26282c;
+    width: 400px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.social-medias-content {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+    grid-template-columns: auto auto;
+    margin-bottom: 15px;
+}
+
+.social-medias-content input {
+    display: flex;
+    width: auto;
+    margin: 0px;
+}
+
+.cellphone, .place {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.cellphone input {
+    display: flex;
+    width: auto;
+    margin: 0px;
+}
+
+.social-medias {
+    width: 100%;
+}
+
+.profile-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.profile-form button {
+    width: 100%;
+}
+
+.name-and-bio {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 75px;
+}
+
+.place-row label {
+    font-size: 14pt;
+}
+.place-row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+}

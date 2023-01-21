@@ -1,0 +1,54 @@
+.account-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0px;
+}
+
+.account-header-title {
+    font-size: 30pt;
+    margin: 0px;
+}
+
+.account-body {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 100%;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.account-form button {
+    font-size: 13pt;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.account-form label {
+    font-size: 17pt;
+    font-weight: bold;
+}
+
+.account-form input, .account-form textarea {
+    font-size: 13pt;
+    border-radius: 5px;
+    font-weight: bold;
+    border: #4c5057 1px solid;
+    background-color: #26282c;
+}
+
+.account-form input, .account-form select, .account-form textarea {
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+.account-form textarea {
+    height: 150px;
+    resize: none;
+}
