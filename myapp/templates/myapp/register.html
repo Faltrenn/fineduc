@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <link rel="stylesheet" href="{% static 'account.css' %}">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
 
     <div class="account-header">
         <h1 class="account-header-title">Faça seu cadastro</h1>
@@ -12,26 +12,16 @@
     </div>
 
     <div class="account-body">
-        <form class="account-form" action="{% url 'register' %}" method="POST">
+        <form class="account-form" action="{% url 'get' %}" method="POST">
             {% csrf_token %}
-            <label for="">Nome completo</label>
-            <input type="text" name="name" id="">
-            <label for="">Email</label>
-            <input type="text" name="email" id="">
-            <label for="">Telefone</label>
-            <input type="text" name="number" id="">
-            <label for="">Estado</label>
-            <select name="state" id="">
-                {% for state in states %}
-                    <option value="state">{{state}}</option>
-                {% endfor %}
-            </select>
-            <label for="">Senha</label>
-            <input type="password" name="pass" id="">
-            <label for="">Confirmar Senha</label>
-            <input type="password" name="confpass" id="">
+            {{ form }}
             <button type="submit">Cadastrar-se</button>
         </form>
     </div>
+
+    <script>
+        var csrftoken = '{{ csrf_token }}';
+    </script>
+    <script src="{% static 'js/register.js' %}"></script>
 
 {% endblock %}

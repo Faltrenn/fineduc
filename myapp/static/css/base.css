@@ -13,7 +13,7 @@ button {
     color: #202124;
 }
 
-button:hover, .login-buttom:hover, .login-buttom-filled:hover {
+button:hover, .login-buttom-filled:hover {
     background-color: #175adf;
     cursor: pointer;
 }

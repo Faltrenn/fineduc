@@ -19,10 +19,12 @@ import myapp.views as myapp
 
 urlpatterns = [
     path('', myapp.redirect_index),
+    path('getCities/', myapp.getCities, name="get"),
     path('admin/', admin.site.urls),
     path('index/', myapp.index, name="index"),
     path('register/', myapp.register, name="register"),
     path('login/', myapp.login, name="login"),
+    path('logout/', myapp.logout, name="logout"),
     path('request/', myapp.request, name="request"),
     path('profile/', myapp.profile, name="profile"),
 ]

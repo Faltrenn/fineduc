@@ -13,12 +13,15 @@
         <form class="profile-form" action="{% url 'profile' %}" method="POST">
             {% csrf_token %}
             <div class="my-profile">
-                <div class="profile-image"></div>
+                <div class="profile-identity">
+                    <div class="profile-image"></div>
+                    {{user.username}}
+                </div>
                 <div class="name-and-bio">
                     <label for="">Nome</label>
                     <input type="text" name="name">
                     <label for="">Bio</label>
-                    <textarea type="text" name="name"></textarea>
+                    <textarea type="text" name="bio"></textarea>
                 </div>
             </div>
             <div class="social-medias">
@@ -40,15 +43,15 @@
                     <label>Estado:</label>
                     <select name="state" id="">
                         {% for state in states %}
-                            <option value="state">{{state}}</option>
+                            <option value="{{state}}">{{state}}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="place-row">
                     <label>Cidade:</label>
-                    <select name="state" id="">
+                    <select name="city" id="">
                         {% for state in states %}
-                            <option value="state">{{state}}</option>
+                            <option value="{{state}}">{{state}}</option>
                         {% endfor %}
                     </select>
                 </div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <title>Fineduc</title>
 </head>
 <body>
@@ -28,6 +28,9 @@
                     <a href="{% url 'profile' %}" class="profile">
                         <div style="width: 55px;height: 55px;border-radius: 27.5px;background-color: black;"></div>
                     </a>
+                    <nav>
+                        <a class="login-buttom" href="{% url 'logout' %}">Sair</a>
+                    </nav>
                 {% else %}
                     <nav>
                         <a class="login-buttom" href="{% url 'register' %}">Cadastre-se</a>
