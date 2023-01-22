@@ -10,11 +10,21 @@
     </div>
 
     <div class="profile-body">
-        <form class="profile-form" action="{% url 'profile' %}" method="POST">
+        <form class="profile-form" enctype="multipart/form-data" action="{% url 'profile' %}" method="POST">
             {% csrf_token %}
             <div class="my-profile">
                 <div class="profile-identity">
-                    <div class="profile-image"></div>
+                    <label for="imageInput">
+                        <img class="profile-img"
+                        {% if profile.image %}
+                            src="{{profile.image}}"
+                        {% else %}
+                            src="{% static 'images/user.png' %}"
+                        {% endif %}
+                        alt="">
+                        <img id="cam" src="{% static 'images/camera.png' %}" alt="">
+                        <input type="file" name="image" accept="image/" id="imageInput">
+                    </label>
                     {{user.username}}
                 </div>
                 <div class="name-and-bio">

@@ -14,10 +14,7 @@
     <div class="account-body">
         <form class="account-form" action="{% url 'login' %}" method="POST">
             {% csrf_token %}
-            <label for="">Username</label>
-            <input type="text" name="username" id="">
-            <label for="">Senha</label>
-            <input type="password" name="pass" id="">
+            {{form}}
             <button type="submit">Entrar</button>
         </form>
     </div>

@@ -21,23 +21,31 @@
 
 <div class="cards">
 
-    {% for c in data %}
+    {% for card in data %}
 
-        <div class="card">
+        <form action="{% url 'seeProfile' %}" method="get" id="{{card.profile.user_id}}">
+            <input type="hidden" name="user_id" value="{{card.profile.user_id}}">
+        </form>
+
+        
+        <a onclick="document.getElementById('{{card.profile.user_id}}').submit()" class="card">
             <div class="card-header">
-                <div style="width: 45px;height: 45px;border-radius: 22.5px;background-color: black;"></div>
-                <h4 class="card-title">Nome completo da pessoa do card atual</h4>
+                <img
+                    {% if card.profile.image %}
+                        src="{{card.profile.image}}"
+                    {% else %}
+                        src="{% static 'images/user.png' %}"
+                    {% endif %}
+                alt="">
+                <h4 class="card-title">{{card.profile.name}}</h4>
             </div>
             <div class="card-content">
-                <p class="card-desc">Descrição do usuário do card que pode ser muito grande que mostrará apenas uma parte linkado ao perfil com um <a href="">ver mais</a>, se for muito grande</p>
+                <p class="card-desc">{{card.request.description}}</p>
             </div>
             <div class="card-goal">
-                Meta de 400 reais
-                <form action="" method="get">
-                    <button>Doar</button>
-                </form>
+                Meta de {{card.request.amount}} reais
             </div>
-        </div>
+        </a>
 
     {% endfor %}
 

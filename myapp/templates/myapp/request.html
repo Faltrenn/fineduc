@@ -11,14 +11,10 @@
     </div>
 
     <div class="account-body">
-        <form class="account-form" action="{% url 'login' %}" method="POST">
+        <form class="account-form" action="{% url 'request' %}" method="POST">
             {% csrf_token %}
-            
-            <label for="">Descrição</label>
-            <textarea type="text" name="desc" id=""></textarea>
-            <label for="">De quanto precisa?</label>
-            <input type="number" step="0.01" name="amount" id="">
-            <button type="submit">Entrar</button>
+            {{form}}
+            <button type="submit">Finalizar</button>
         </form>
     </div>
 

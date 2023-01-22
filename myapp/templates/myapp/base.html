@@ -40,7 +40,13 @@
                     </nav>
                 {% endif %}
                 <nav>
-                    <a class="login-buttom-filled" href="{% url 'request' %}">Faça um pedido</a>
+                    <a class="login-buttom-filled" href="{% url 'request' %}">
+                        {% if user.is_authenticated %}
+                            Ver meu pedido
+                        {% else %}
+                            Fazer um pedido
+                        {% endif %}
+                    </a>
                 </nav>
             </div>
         </div>

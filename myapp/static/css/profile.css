@@ -121,3 +121,43 @@
     justify-content: center;
     align-items: center;
 }
+
+#cam {
+    visibility: hidden;
+    width: 90px;
+    height: 90px;
+
+}
+
+.profile-identity img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+#imageInput {
+    display: none;
+}
+
+.profile-identity label {
+    cursor: pointer;
+}
+
+.profile-img {
+    position: absolute;
+    z-index: -1;
+}
+.profile-identity label:hover #cam {
+    visibility: visible;
+    background-color: #3a3a3a5e;
+    padding: 30px;
+    border-radius: 30px;
+}
+.profile-identity label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    width: 150px;
+    height: 150px;
+}

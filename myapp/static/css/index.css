@@ -10,6 +10,11 @@ p {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    color: #acb0b6;
+}
+
+.cards a:hover {
+    cursor: pointer;
 }
 
 .card-title {
@@ -22,12 +27,24 @@ p {
     align-items: center;
 }
 
+.card-header img {
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+}
+
+.card-content {
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+}
+
 .card-goal {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
 }
 
 .cards {
@@ -36,7 +53,6 @@ p {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
-    
 }
 
 .index-header {
@@ -59,4 +75,24 @@ p {
 
 .filter-title {
     margin: 0px;
+}
+
+/* width */
+.card-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.card-content::-webkit-scrollbar-track {
+    background: #747474; 
+}
+
+/* Handle */
+.card-content::-webkit-scrollbar-thumb {
+    background: #25262a; 
+}
+
+/* Handle on hover */
+.card-content::-webkit-scrollbar-thumb:hover {
+    background: #202124; 
 }
