@@ -12,16 +12,13 @@
     </div>
 
     <div class="account-body">
-        <form class="account-form" action="{% url 'get' %}" method="POST">
+        <form class="account-form" action="{% url 'register' %}" method="POST">
             {% csrf_token %}
             {{ form }}
             <button type="submit">Cadastrar-se</button>
         </form>
     </div>
 
-    <script>
-        var csrftoken = '{{ csrf_token }}';
-    </script>
-    <script src="{% static 'js/register.js' %}"></script>
+    {{form.errors}}
 
 {% endblock %}

@@ -11,6 +11,8 @@ class Profile(models.Model):
     state = models.CharField(max_length=2, blank=True)
     city = models.CharField(max_length=20, blank=True)
 
+    
+    bio = models.TextField(blank=True)
     link_youtube = models.CharField(max_length=150, blank=True)
     link_instagram = models.CharField(max_length=150, blank=True)
     link_facebook = models.CharField(max_length=150, blank=True)

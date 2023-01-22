@@ -19,10 +19,13 @@ def index(request: HttpRequest):
     return render(request, "myapp/index.html", context={"data": range(5)})
 
 def register(request: HttpRequest):
+    form = RegisterForm()
     if request.POST:
         try:
             User.objects.get(username=request.POST.get("username"))
-            return render(request, "myapp/register.html", context={"states": ufbr.list_uf, "form": RegisterForm(request.POST)})
+            form = RegisterForm(request.POST)
+            form.add_error("username", "Este username já está em uso")
+            return render(request, "myapp/register.html", context={"states": ufbr.list_uf, "form": form})
         except User.DoesNotExist:
             form = RegisterForm(request.POST)
             if form.is_valid:
@@ -44,8 +47,7 @@ def register(request: HttpRequest):
                 return redirect("index")
             else:
                 print("form errado")
-    else:
-        return render(request, "myapp/register.html", context={"states": ufbr.list_uf, "form": RegisterForm() })
+    return render(request, "myapp/register.html", context={"states": ufbr.list_uf, "form": form })
 
 def login(request: HttpRequest):
     if request.POST:
@@ -67,7 +69,19 @@ def request(request: HttpRequest):
 
 def profile(request: HttpRequest):
     if request.user.is_authenticated:
-        return render(request, "myapp/profile.html", context={"states": ufbr.list_uf})
+        profile = Profile.objects.filter(user_id=request.user).get()
+        if request.POST:
+            profile.name = request.POST.get("name")
+            profile.bio = request.POST.get("bio")
+            profile.link_facebook = request.POST.get("link_facebook")
+            profile.link_instagram = request.POST.get("link_instagram")
+            profile.link_linkedin = request.POST.get("link_linkedin")
+            profile.link_youtube = request.POST.get("link_youtube")
+            profile.cellphone = request.POST.get("cellphone")
+            profile.state = request.POST.get("state")
+            profile.city = request.POST.get("city")
+            profile.save()
+        return render(request, "myapp/profile.html", context={"states": ufbr.list_uf, "cities": ufbr.list_cidades(profile.state), "profile": profile})
     else:
         return redirect("register")
 

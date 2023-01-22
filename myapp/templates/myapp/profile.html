@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <link rel="stylesheet" href="{% static 'profile.css' %}">    
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">    
     <div class="profile-header">
         <h1 class="profile-header-title">Meus dados</h1>
     </div>
@@ -19,39 +19,39 @@
                 </div>
                 <div class="name-and-bio">
                     <label for="">Nome</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="{{profile.name}}">
                     <label for="">Bio</label>
-                    <textarea type="text" name="bio"></textarea>
+                    <textarea type="text" name="bio">{{profile.bio}}</textarea>
                 </div>
             </div>
             <div class="social-medias">
                 <label for="">Redes Sociais</label>
                 <div class="social-medias-content">
-                    <input type="text" name="instagram" placeholder="Link do Instagram">
-                    <input type="text" name="facebook" placeholder="Link do Facebook">
-                    <input type="text" name="youtube" placeholder="Link do Youtube">
-                    <input type="text" name="linkedin" placeholder="Link do Linkedin">
+                    <input type="text" name="link_instagram" value="{{profile.link_instagram}}" placeholder="Link do Instagram">
+                    <input type="text" name="link_facebook" value="{{profile.link_facebook}}" placeholder="Link do Facebook">
+                    <input type="text" name="link_youtube" value="{{profile.link_youtube}}" placeholder="Link do Youtube">
+                    <input type="text" name="link_linkedin" value="{{profile.link_linkedin}}" placeholder="Link do Linkedin">
                 </div>
             </div>
             <div class="cellphone">
                 <label for="">Telefone</label>
-                <input type="text" name="cellphone" placeholder="Número de Telefone">
+                <input type="text" name="cellphone" value="{{profile.cellphone}}" placeholder="Número de Telefone">
             </div>
             <div class="place">
                 <label>Localização</label>
                 <div class="place-row">
                     <label>Estado:</label>
-                    <select name="state" id="">
+                    <select name="state" id="id_state">
                         {% for state in states %}
-                            <option value="{{state}}">{{state}}</option>
+                            <option {% if state == profile.state %} selected {% endif %} value="{{state}}">{{state}}</option>
                         {% endfor %}
                     </select>
                 </div>
                 <div class="place-row">
                     <label>Cidade:</label>
-                    <select name="city" id="">
-                        {% for state in states %}
-                            <option value="{{state}}">{{state}}</option>
+                    <select name="city" id="id_city">
+                        {% for city in cities %}
+                            <option {% if city == profile.city %} selected {% endif %} value="{{city}}">{{city}}</option>
                         {% endfor %}
                     </select>
                 </div>
