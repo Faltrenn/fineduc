@@ -33,13 +33,18 @@ body {
 
 header {
     display: flex;
-    /* height: 100px; */
     padding: 15px 0px;
     border-style: solid;
     border-width: 0px;
     border-color: #3c4043;
     border-bottom-width: 1px;
     background-color: #202124;
+}
+
+select {
+    background-color: #26282c;
+    border-radius: 5px;
+    color: #acb0b6;
 }
 
 .main {
@@ -85,13 +90,6 @@ header {
     color: #565a61;
 }
 
-/* #search:hover {
-    
-} */
-/* #search:focus {
-    border-color: #5a5e66;
-} */
-
 .profile {
     margin-right: 20px;
 }
@@ -121,10 +119,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.left-header-half {
-    /* flex-direction: row-reverse; */
 }
 
 .login-area {
