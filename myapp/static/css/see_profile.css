@@ -23,6 +23,7 @@
 .social-medias-icons {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     margin: 10px;
     gap: 5px;
 }
@@ -37,10 +38,16 @@
 .profile-identity {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin-top: -75px;
     gap: 10px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
 }
 h2, h1 {
     margin: 0px;
@@ -59,4 +66,8 @@ h2, h1 {
     height: 150px;
     border-radius: 75px;
     background-color: black;
+}
+
+.image-and-medias {
+    display: flex;
 }

@@ -8,44 +8,46 @@
     
     <div class="profile-content">
         <div class="profile-header">
-            <div class="social-medias-icons">
-                {% if profile.link_facebook %}
-                <a href="{{profile.link_facebook}}">
-                    <img src="{% static 'images/facebook.png' %}" alt="Facebook">
-                </a>
-                {% endif %}
-                {% if profile.link_instagram %}
-                <a href="{{profile.link_instagram}}">
-                    <img src="{% static 'images/instagram.png' %}" alt="Instagram">
-                </a>
-                {% endif %}
-            </div>
             <div class="profile-identity">
-                <img
-                    {% if profile.image %}
-                        src="{{profile.image}}"
-                    {% else %}
-                        src="{% static 'images/user.png' %}"
-                    {% endif %}
-                alt="">
+                <div class="image-and-medias">
+                    <div class="social-medias-icons">
+                        {% if profile.link_facebook %}
+                        <a href="{{profile.link_facebook}}">
+                            <img src="{% static 'images/facebook.png' %}" alt="Facebook">
+                        </a>
+                        {% endif %}
+                        {% if profile.link_instagram %}
+                        <a href="{{profile.link_instagram}}">
+                            <img src="{% static 'images/instagram.png' %}" alt="Instagram">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <img class="profile-img"
+                        {% if profile.image %}
+                            src="{{profile.image}}"
+                        {% else %}
+                            src="{% static 'images/user.png' %}"
+                        {% endif %}
+                    alt="">
+                    <div class="social-medias-icons">
+                        {% if profile.link_youtube %}
+                        <a href="{{profile.link_youtube}}">
+                            <img src="{% static 'images/youtube.png' %}" alt="YoutTube">
+                        </a>
+                        {% endif %}
+                        {% if profile.link_linkedin %}
+                        <a href="{{profile.link_linkedin}}">
+                            <img src="{% static 'images/linkedin.png' %}" alt="Linkedin">
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
                 <h2>{{profile.name}}</h2>
                 {{profile.city}} - {{profile.state}}
                 <h1>Bio</h1>
                 <p>{{profile.bio}}</p>
                 <h1>Telefone</h1>
                 <p>{{profile.cellphone}}</p>
-            </div>
-            <div class="social-medias-icons">
-                {% if profile.link_youtube %}
-                <a href="{{profile.link_youtube}}">
-                    <img src="{% static 'images/youtube.png' %}" alt="YoutTube">
-                </a>
-                {% endif %}
-                {% if profile.link_linkedin %}
-                <a href="{{profile.link_linkedin}}">
-                    <img src="{% static 'images/linkedin.png' %}" alt="Linkedin">
-                </a>
-                {% endif %}
             </div>
         </div>
         {% if request %}
